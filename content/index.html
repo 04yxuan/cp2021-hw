@@ -127,7 +127,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li class='has-children'><a href='portable_hybrid.html'>portable_hybrid</a><ul class='dropdown'><li><a href='ANSI C.html'>ANSI C</a><li><a href='C-notes.html'>C-notes</a><li><a href='Pyslvs-UI.html'>Pyslvs-UI</a></li></ul><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Snake.html'>Snake</a><li><a href='SSH.html'>SSH</a><li class='has-children'><a href='Network.html'>Network</a><ul class='dropdown'><li><a href='Fossil Server.html'>Fossil Server</a></li></li></ul></ul><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li><a href='Token.html'>Token</a><li><a href='SSH push.html'>SSH push</a></li></ul><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='Python.html'>Python</a><li><a href='run1.html'>run1</a><li><a href='run2.html'>run2</a><li><a href='run3.html'>run3</a><li><a href='Server.html'>Server</a></li></ul><li><a href='W10.html'>W10</a><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li class='has-children'><a href='Algorithms.html'>Algorithms</a><ul class='dropdown'><li><a href='Practice1.html'>Practice1</a><li><a href='Practice2.html'>Practice2</a><li><a href='Practice3.html'>Practice3</a></li></ul><li><a href='Path Finding.html'>Path Finding</a><li><a href='ML in Brython.html'>ML in Brython</a><li><a href='Math.html'>Math</a></li></ul><li><a href='Final Project.html'>Final Project</a></li>
+                     <li><a href='About.html'>About</a></li>
                       </ul>
                 </nav>
               </div>
@@ -138,15 +138,58 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='portable_hybrid.html'>Next</a> >> portable_hybrid<br /><h1>About</h1>
+    <div id="tipue_search_content"> <br /><h1>About</h1>
 <p></p>
 <p>這是計算機程式課程 2021 Fall 的作業倉儲與網站 template</p>
 <hr/>
 <p>demo 學號與帳號: 41023204</p>
 <p>網站倉儲: <a href="https://github.com/04yxuan/cp2021-hw">https://github.com/04yxuan/cp2021-hw</a></p>
-<p>網站連結: <a href="https://mde.tw/cp2021_hw">https://mde.tw/cp2021_hw</a></p>
+<p>網站連結: <a href="https://04yxuan.github.io/cp2021-hw/">https://04yxuan.github.io/cp2021-hw/</a></p>
 <p>其他與個人或作業相關資料說明或介紹:</p>
-<p>mdecourse 所屬的實驗室: <a href="https://mde.tw">https://mde.tw</a></p><br /> <a href='portable_hybrid.html'>Next</a> >> portable_hybrid</div>
+<p></p>
+<p><a href="https://mde.tw/cp2021_hw/content/run.html?src=https://gist.githubusercontent.com/mdecourse/e896a4705a95ac8cc4147b355b0e87ef/raw/8954b8280c524c5781dc3c0b3565bc489d3aa3a3/cango_gear1.py"></a></p>
+<p></p>
+<p><a href="https://github.com/mdecourse/python-game-snake"></a></p>
+<p><!-- 判斷輸入字串是否aA1$, 且至少 8 個字元-開始 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd2(ev):
+    bd = doc["brython_div2"]
+    bd.clear()
+
+# 利用 ace 中的 Editor 建立 Ace 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace3 = ace.Editor(editor_id="kw_editor2", console_id="kw_console2", container_id="kw__container2", storage_id="kw_py_src2" )
+
+check_str_url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/56dc6a6b8eaa05b80994ac6f08ebc9326330be43/check_str_input_content_1.py"
+# 從 gist 取得程式碼
+check_src = open(check_str_url).read()
+
+def check_input(ev):
+    Ace3.editor.setValue(check_src)
+    Ace3.editor.scrollToRow(0)
+    Ace3.editor.gotoLine(0)
+    #Ace.run()
+
+# id 為 "check_input" 的按鈕點按時, 執行 check_input 方法
+doc["check_input"].bind('click', check_input)
+
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run2'].bind('click', Ace3.run)
+doc['kw_show_console2'].bind('click', Ace3.show_console)
+doc['kw_clear_console2'].bind('click', Ace3.clear_console)
+doc['clear_bd2'].bind('click', clear_bd2)
+# 呼叫函式執行
+run1()
+</script>
+</p>
+<p><!-- 判斷輸入字串是否aA1$, 且至少 8 個字元-結束--></p>
+<!-- editor2 開始 -->
+<p><!-- 用來顯示程式碼的 editor 區域 --></p>
+<div id="kw_editor2" style="width: 600px; height: 300px;"></div>
+<p><!-- 執行與清除按鈕結束 --></p><br /> </div>
         
     <!-- footer -->
       <div class="container">
